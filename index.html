@@ -6,53 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css"><link>
+    <script src="script.js" defer></script>
 </head>
+
 <body>
     <h1>Etch-A-Sketch</h1>
     <div class="game-area">   
         <div class="control-panel">
-            <button class="btn-clear">CLEAR</button>
+            <button class="btn-grid" onclick="newGrid()">CHANGE GRID</button>
+            <button class="btn-clear" onclick="clearCanvas()">CLEAR</button>
+            <button class="btn-erase" onclick="eraseCanvas()">ERASE</button>
+            <button class="btn-black" onclick="paintBlack()">BLACK</button>
+            <button class="btn-random" onclick="randomPaint()">COLORS</button>
+            <button class="btn-shadow" onclick="shadowPaint()">GRADIENT</button>
         </div>
         <div class="container"></div>
     </div>
 
-    <script>
-        const container = document.getElementsByClassName('container');
-        //console.log(container[0]);
-        
-        for (i=0; i<256; i++) {
-            const smallDiv = document.createElement('div');
-            smallDiv.classList.add('xs-divs');    
-            //console.log(smallDiv);
-            container[0].appendChild(smallDiv);
-        }      
-        
-        const allDivs = document.querySelectorAll(".xs-divs");
-        //console.log(allDivs);
-        const allDivsArr = Array.prototype.slice.call(allDivs);
-        //console.log(allDivsArr.length);
-
-        for(i=0; i<allDivsArr.length; i++){
-            allDivsArr[i].addEventListener("mouseover", paint);
-        }
-        
-        function paint(e){
-            //console.log(e.target);
-            e.target.style.background='black';            
-        }
-
-        const clearBtn = document.querySelector(".btn-clear");
-        //console.log(clearBtn)
-        clearBtn.addEventListener("click", clear);
-
-        function clear(){
-            for(i=0; i<allDivsArr.length; i++){
-                allDivsArr[i].style.background='white';
-
-            }
-            
-        }
-        
-    </script>
 </body>
 </html>
