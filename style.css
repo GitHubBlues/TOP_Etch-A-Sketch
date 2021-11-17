@@ -2,6 +2,21 @@ body{
     background: rgb(238, 204, 141);
 }
 
+h1{
+    text-align: center;   
+}
+
+.game-area{
+    display: flex;
+    border: 1px solid grey;
+}
+
+.btn-clear{
+    font-size: x-large;
+    padding: 0.5rem 1rem; 
+    margin: 3rem;
+
+}
 /* Make grid with Flexbox */
 /* .container{
     display: flex;
@@ -38,7 +53,7 @@ body{
     display: grid; 
     height: 30px ;
     width: 30px;
-    border: 2px solid blue;
+    border: 1px solid grey;
     box-sizing: border-box;
     margin:0;
 }

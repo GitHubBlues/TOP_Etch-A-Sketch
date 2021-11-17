@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="style.css"><link>
 </head>
 <body>
-    <div class="container"></div>
+    <h1>Etch-A-Sketch</h1>
+    <div class="game-area">   
+        <div class="control-panel">
+            <button class="btn-clear">CLEAR</button>
+        </div>
+        <div class="container"></div>
+    </div>
+
     <script>
         const container = document.getElementsByClassName('container');
         //console.log(container[0]);
@@ -19,7 +26,33 @@
             //console.log(smallDiv);
             container[0].appendChild(smallDiv);
         }      
+        
+        const allDivs = document.querySelectorAll(".xs-divs");
+        //console.log(allDivs);
+        const allDivsArr = Array.prototype.slice.call(allDivs);
+        //console.log(allDivsArr.length);
 
+        for(i=0; i<allDivsArr.length; i++){
+            allDivsArr[i].addEventListener("mouseover", paint);
+        }
+        
+        function paint(e){
+            //console.log(e.target);
+            e.target.style.background='black';            
+        }
+
+        const clearBtn = document.querySelector(".btn-clear");
+        //console.log(clearBtn)
+        clearBtn.addEventListener("click", clear);
+
+        function clear(){
+            for(i=0; i<allDivsArr.length; i++){
+                allDivsArr[i].style.background='white';
+
+            }
+            
+        }
+        
     </script>
 </body>
 </html>
